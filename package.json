@@ -1,0 +1,27 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Learning node and npm",
+  "main": "app.js",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiwariaditya15/nodePractice.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "aditya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiwariaditya15/nodePractice/issues"
+  },
+  "homepage": "https://github.com/tiwariaditya15/nodePractice#readme"
+}

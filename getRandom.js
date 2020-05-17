@@ -13,4 +13,4 @@ const getEmail = function(){
     const emailsArray = ['tiwariadity156@hotmail.com', 'tiwariadity1@hotmail.com', 'tiwariadity157@hotmail.com', 'tiwariadity1579@hotmail.com', 'tiwariadity15@hotmail.com'];
     return emailsArray[Math.floor(Math.random() * emailsArray.length)];
 }
-module.exports = {getName, getNumber, getEmail};
+module.exports = { getName, getNumber, getEmail };

@@ -1,0 +1,23 @@
+{
+   "first": {
+        "name" : "aditya",
+        "age": 18,
+        "experience": "freshers"
+
+    },
+
+    "second": {
+        "name" : "pankaj",
+        "age": 29,
+        "experience": "5"
+
+    },
+
+    "third": {
+        "name" : "priya",
+        "age": 26,
+        "experience": "none"
+
+    } 
+
+}

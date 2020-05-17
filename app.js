@@ -1,53 +1,47 @@
-// --> video 4
-// /* setTimeout sits on global object and acts like timer */
-// setTimeout(function(){
-//     console.log('2 secconds passed now setInterval runs.');
-// }, 2000);
+const http = require('http');
+const fs = require('fs');
 
-
-
-// let time = 0;
-// /*setInterval() runs after each x miliseconds passed in function*/
-// const timer = setInterval(function(){
-//     time += 2;
-//     if(time > 5){
-//         console.log('setInterval ran for 4 seconds now exiting.');
-//         clearInterval(timer);
-//     }
-// }, 2000);
-
-// //global.__dirname and ____filename
-// console.log(global);
-// console.log( 'Directory -> ' + __dirname);
-// console.log( 'Filename -> ' + __filename);
-
-//--> video 5
-
-// let {getName, getNumber, getEmail} = require('./getRandom');
-// let time = 0;
-// const timer = setInterval(function(){
-//     time += 1;
-//     if(time > 10){
-//         console.log('Program ran 10 seconds');
-//         clearInterval(timer);
-//     }
-//     console.log('Now my name is ' + getName() + ', number is ' + getNumber() + ', and email is ' + getEmail());
-// }, 1000);
-
-
-//-------------------->events module
-const events = require('events');
-
-// const customEmitter = new events.EventEmitter();
-
-// customEmitter.on('explicitEmit', function(msg){
-//     console.log(msg);
-// });
-
-// customEmitter.emit('explicitEmit', 'Forcefull custom emit.');
-
-class Person extends events.EventEmitter{
-    constructor(name){
-            
+const server = http.createServer((req, res) => {
+   if ( req.url === '/home' || req.url === '/'){
+       res.writeHeader(200, {'Content-Type': 'text/html'});
+       fs.createReadStream( __dirname + '/index.html', 'utf8').pipe(res);
+   } else if ( req.url === '/contact'){
+        res.writeHeader(200, {'Content-Type': 'text/html'});
+        fs.createReadStream( __dirname + '/contact.html', 'utf8').pipe(res);
+    } else if ( req.url === '/pricing'){
+        res.writeHeader(200, {'Content-Type': 'text/html'});
+        fs.createReadStream( __dirname + '/pricing.html', 'utf8').pipe(res);
+    }else if( req.url === '/api/candidates'){
+     const details = [{
+        "first": {
+             "name" : "aditya",
+             "age": 18,
+             "experience": "freshers"
+     
+         },
+     
+         "second": {
+             "name" : "pankaj",
+             "age": 29,
+             "experience": "5"
+     
+         },
+     
+         "third": {
+             "name" : "priya",
+             "age": 26,
+             "experience": "none"
+     
+         } 
+     
+     }];
+     res.writeHeader(200, {'Content-Type':'application/json'});
+     res.end(JSON.stringify(details));
+    }else{
+        res.writeHeader(404, {'Content-Type': 'text/html'});
+        fs.createReadStream( __dirname + '/404.html', 'utf8').pipe(res);
     }
-}
+});
+
+server.listen(3000, '127.0.0.1');
+console.log('Server started.');
