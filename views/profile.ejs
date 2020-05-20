@@ -16,10 +16,17 @@
         </style>
     </head>
     <body>
-        <a href="home">Home</a>
-        <a href="contact">Contact</a>
-        <a href="pricing">Pricing</a>
+        <%- include('partials/nav') %>
         <h1>The coolest guy on planet is <%= user %> with id: <%= id %>.</h1>
         <p>Aight don't move.</p>
+        
+                <% data.forEach( eachObj => {
+
+               %>
+               <ol>
+                </ol>
+                 <%   
+                });%>
+        
     </body>
 </html>

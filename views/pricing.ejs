@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+           Pricing
+        </title>
+        <link href="/assets/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <%- include('partials/nav') %>
+        <h1>We ain't charge.</h1>
+        <p>Ninjas stay cool.</p>
+        <p>Application Scale:<%= queryString.apptype;%></p>
+        <p>Price:<%= queryString.price;%></p>
+        <p>Language Used:<%= queryString.lang;%></p>
+        
+        <form action="/pricing" method="POST">
+                <label for="apptype">Application Type:</label>
+                <input type="text" name="apptype" value="<%= queryString.apptype;%>"/>
+
+                <label for="price">Price:</label>
+                <input type="text" name="price" value="<%= queryString.price%>"/>
+
+                <label for="lang">Language:</label>
+                <input type="text" name="lang" value="<%= queryString.lang;%>"/>
+
+                <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
