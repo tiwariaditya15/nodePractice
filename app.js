@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
+
 
 app.get('/', (req, res) => {
     res.render('index');
